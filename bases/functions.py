@@ -14,14 +14,23 @@ print( do_suma.__doc__ ) #1
 # sobre su propósito, comportamiento, parámetros, valores de retorno, y etc.
 
 
-#----------------------'positional arguments'------------------------------
+#----------------------'positional arguments y *args'------------------------------
 
-# los argumentos se pasan a la función en el orden...
-# en que se definieron en la firma de la función y se empaquetan en una tupla dentro de la función.
+# los 'positional arguments' se pasan a la función en el orden en que...
+# se definieron en su firma y se empaquetan internamente en una tupla.
 def positional_args(param1, param2):
   print(param1, param2)
 
 positional_args("Beto", "Murillo")
+
+
+# los *args, parámetro especial que se utiliza  para indicar que una función puede...
+# recibir un número n de variables como argumentos posicionales. se logra colocando un asterisco (*) en un unico parametro 
+# internamente almacena cada parametro en una tupla
+def sumar_muchos(*params):
+  return sum(params)
+
+print( "*args ->", sumar_muchos(2,3,6,4,5,8,4,2,2) )  
 
 
 #--------------------------'keyword argument'---------------------
@@ -29,9 +38,9 @@ positional_args("Beto", "Murillo")
 # argumentos tipo 'keyword': los argumentos se pasan a la función utilizando...
 # sus nombres correspondientes y son empaquetados en un diccionario dentro de la función.
 def keyword_args(param1, param2, param3):
-  print(f"No {param1} el {param2} de los {param3}")
+  print(f"No importa el orden {param1} {param2} {param3} de entrada")
 
-keyword_args( param2="importa", param1="orden", param3="parametros" )
+keyword_args( param2="🍉", param1="🍌", param3="🍐" )
 
 
 #-------------------------'iterable unpacking' ---------------------------
