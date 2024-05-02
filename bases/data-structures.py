@@ -1,57 +1,87 @@
 
 
-# LIST -> Mutable - Ordenada - Elemnts repetidos - Heterogéneos - Iterable
-my_list = [7, 'casa', False, '⚜️', '⚜️']
-print("lista:", my_list)
+#---------------------'LISTAS'-------------------------------
+# - Mutable - Ordenada - Duplicados - Heterogéneos - Iterable - Busqueda Eficiente O(1) -
+list_1 = [7, "word", 52 ]
+frutas = ["🍌", "🍇", "🍑"]
+words = ["cama", "xilofono", "barco", "yuca", "avión", "zorro"] 
+
+# Metodos
+list_1.append("22") #<- agrega un elmnt al final de una list.
+list_1.insert(2, "🐘") #<- insertar un elmnt en la list en un indice específicado. 
+list_1.count("word") #<- cuenta el # de veces que un elemt especificado aparece en una list. 
+list_1.extend(frutas) #<- agrega los elmnts de una list (u otro iterable) al final de otra list.
+list_1.remove(52) #<- elimina la primera ocurrencia de un elemento específico en una list.
+list_1.reverse() #<- inverte el orden de los elemts en una lista
+
+# Output
+print("LIST_1 =", list_1)
+
+# Metodos
+idx = list_1.index("🍌") #<- retorna la posición de la primera aparición de un elmnt especificado en una list. 
+print("POSICION =", idx) 
+
+word_sorted = words.sort(reverse=False, key=str) #<- ordenar los elemnts modificando la list original en orden ascendente o descendente.
+print("WORDS ORDENADOS =", word_sorted)
+
+delete_elem = list_1.pop(2) #<- elimina y retorna el elem en una posición específica de una lista.
+print("ELEM DELTETED =", delete_elem)
+
+clear_list = list_1.clear() #<- elimina todos los elementos de una lista
+print("LIST_CLEAN =", clear_list) 
 
 
-#TUPLAS -> Inmutable - Ordenada - Heterogéneos
+
+
+#---------------------'TUPLAS'-------------------------------
+#TUPLAS -> Inmutable - Ordenada - Heterogéneos, Acceso eficiente
+#útiles donde se requiere estabilidad y consistencia en los datos. 
 my_tupla = (5,"tupla",True)
 
 
-# SET -> Mutable - Iterable - Elemts únicos - Desordenado - Heterogéneos
+#---------------------'SET - CONJUNTO'-------------------------------
+# - Mutable - Iterable - Únicos - Desordenado - Heterogéneo -
 # la búsqueda eficiente debido a que internamente implementa Hash Table
-my_set = {9,8,7,"cero",5,0}
-my_set.add(True)
-my_set.add('cero')
-print("conjunto:", my_set)
+set_1 = {9,7,True}
+set_1.add('casa')
+print("CONJUNTO =", set_1)
 
-existe_elemento = 'cero' in my_set
-print("Existe en el Set:", existe_elemento)
+existe_elemento = 'cero' in set_1
+print("¿EXISTE? =", existe_elemento)
 
 
-# DICCIONARIO -> Pares clave-valor - Mutable - Claves unicas - Desordenado - Iterable - Claves únicas
+#---------------------'DICCIONARIOS'-------------------------------
+# - Pares clave-valor - Mutable - Claves Únicas - Desordenado - Iterable - Heterogéneo
 # la búsqueda eficiente debido a que internamente implementa Hash Table
-my_dict_1 = {
+
+dict_1 = {
   'sara': [1.6, 'pasa'],
   'beto': {6, True},
   'sam': 'rico' 
 }
-print("dict_1:", my_dict_1.keys())
+print("KEYS =", dict_1.keys())
+print("VALUES =", dict_1.values())
 
-my_dict_2 = dict(
-  carla = [1.6, 'pasa'],
-  beto = {6, True},
-  sam = 'rico' 
-)
-print("dict_2:", my_dict_2.values())
+dict_3 = dict()
+dict_3['carla'] = [1.6, 'pasa']
+dict_3['beto'] = {6, True}
+dict_3['sam'] = 'rico'
+print("ITEMS =", dict_3.items())
 
-my_dict_3 = dict()
-my_dict_3['carla'] = [1.6, 'pasa']
-my_dict_3['beto'] = {6, True}
-my_dict_3['sam'] = 'rico'
-print("dict_3:", my_dict_3.items())
 
+
+
+#---------------------'ITERACIONES'-------------------------------
 
 # ------ for loop ---------
-for item_list in my_list:
-  print(item_list)
+for item_list in list_1:
+  print("FOR LIST =", item_list)
 
-for item_set in my_set:
-  print(item_set)
+for item_set in set_1:
+  print("FOR SET =",item_set)
 
-for item_dict in my_dict_3:
-  print(item_dict) # itera claves
+for item_dict in dict_3:
+  print("FOR DICT =", item_dict) # itera claves
 
 
 # ------ for loop con 'range()' ---------
@@ -60,12 +90,12 @@ veces = range(6)
 
 for _ in veces:
   count = count + 1
-  print("iteracion -> ", count)
+  print("LOOP # =", count)
 
 print( list(veces) ) # casteamos 'veces' para ver su interior
 
 # ------ for loop con 'enumerate' ---------
-for idx, val in enumerate(my_list):
+for idx, val in enumerate(list_1):
   print( idx, val )
 
 
