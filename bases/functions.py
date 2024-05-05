@@ -118,34 +118,6 @@ print('precio unidad: ', precio_unitario)
 print('precio final: ', precio_final)
 
 
-#---------------------'LAMBDA Fx'-------------------------------
-# Son fx anomimas (sin nombre | asignadas a variables | se pueden pasar como arg a fx de orden superior)
-# se usan para realizar operaciones rapidas y pequeñas de forma expresiva
-
-lambda e: e  # <- estructura basica de un lambda
-
-#Input: una lista de tuplas con nombre de estuduantes y calificaciones
-student_list = [('María', 3.7), ('José', 4.0), ('Pedro', 4.9), ('Santiago', 2.8)]
-#Operaciones: ordenar la lista de > a < segun calificaciones
-ordenar_calificaciones = sorted(student_list, key=lambda n: n[1], reverse=True ) # <- la nota está ubicada en el indice [1] de la tupla | sorted() es una fx de orden superior
-#Output
-print('lambda = ', ordenar_calificaciones)
-
-#Ejemplo de fx-lmbd asignada a una varible
-sumar = lambda a,b: a+b
-print('suma lambda =', sumar(2,2))
 
 
-sentence = "La cara de la {} muchacha es hermosa {}"
-name_list = ["Beto", "Sara", "Camila"]
-number = "4"
 
-print(sentence.find("t")) #<- return indice
-print(sentence.split()) #<- divide una cadena en varias subcadenas una lista de elmnts
-print(sentence.rindex('hermosa')) #<- busca desde el final hacia el principio, retorna el idx donde comienza la ocurrencia
-print(sentence.count('cara')) #<- retorna el numero de veces que una subcadena aparece dentro de una cadena
-print(sentence.index('es')) #<- retorna la posición de la primera ocurrencia de una subcadena dentro de una cadena
-print( "_".join(name_list) ) #<- concatena elmnts de una lista en una sola cadena, usando otra cadena como separador.
-print(number.isnumeric()) # <- retorna True
-print(sentence.format(number, name_list)) #<- permite la inserción de valores en posiciones específicas dentro de la cadena el {} indica la posicion.
-print(sentence.replace('La cara', 'El rostro')) #<- reemplazar todas las ocurrencias de una subcadena en una cadena dada con otra subcadena.
